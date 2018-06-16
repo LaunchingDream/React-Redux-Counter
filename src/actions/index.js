@@ -1,15 +1,15 @@
 import * as types from './ActionTypes';
 
 export const increment = () => ({
-  types: types.INCREMENT,
+  type: types.INCREMENT,
 });
 
 export const decrement = () => ({
-  types: types.DECREMENT,
+  type: types.DECREMENT,
 });
 
 export const setColor = color => ({
-  types: types.SET_COLOR,
+  type: types.SET_COLOR,
   color,
 });
 

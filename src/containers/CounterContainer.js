@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
   number: state.number
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   onIncrement: () => dispatch(actions.increment()),
   onDecrement: () => dispatch(actions.decrement()),
   onSetColor: () => {
@@ -19,7 +19,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const CounterContainer = connect(
-  mapStateToProps, mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Counter);
 
 export default CounterContainer;
