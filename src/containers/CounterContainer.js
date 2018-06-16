@@ -15,7 +15,7 @@ const mapDispatchToProps = dispatch => ({
   onSetColor: () => {
     const color = getRandomColor();
     dispatch(actions.setColor(color));
-  }
+  },
 });
 
 const CounterContainer = connect(
