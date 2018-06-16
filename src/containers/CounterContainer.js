@@ -4,12 +4,12 @@ import * as actions from '../actions';
 import Counter from '../components/Counter';
 import { getRandomColor } from '../utils';
 
-const mapStateToProps = (state) => ({
-  color: state.color,
-  number: state.number
+const mapStateToProps = state => ({
+  color: state.colorData.color,
+  number: state.numberData.number,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   onIncrement: () => dispatch(actions.increment()),
   onDecrement: () => dispatch(actions.decrement()),
   onSetColor: () => {
@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const CounterContainer = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Counter);
 
 export default CounterContainer;
