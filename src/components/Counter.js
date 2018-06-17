@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './Counter.css';
 
 const propTypes = {
+  index: PropTypes.number,
   number: PropTypes.number,
   color: PropTypes.string,
   onIncrement: PropTypes.func,
@@ -11,6 +12,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  index: 0,
   number: 0,
   color: 'black',
   onIncrement: () => console.warn('onIncrement not defined'),
@@ -19,20 +21,19 @@ const defaultProps = {
 };
 
 const Counter = ({
-  number, color, onIncrement, onDecrement, onSetColor,
+  number, color, index, onIncrement, onDecrement, onSetColor,
 }) => (
   <div
     className="Counter"
-    onClick={onIncrement}
+    onClick={() => onIncrement(index)}
     onContextMenu={
       (e) => {
         e.preventDefault();
-        onDecrement();
+        onDecrement(index);
       }
     }
-    onDoubleClick={onSetColor}
+    onDoubleClick={() => onSetColor(index)}
     style={{ backgroundColor: color }}
-    role="button"
   >
     {number}
   </div>
